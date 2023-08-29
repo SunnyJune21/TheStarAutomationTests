@@ -17,6 +17,7 @@ def get_existing_credentials():
     email = "test12357@test.com"
     password = "eonbfdsml3980TIO!$"
     name = "Jenny"
+    return [email, password, name]
 
 @pytest.fixture(scope="module")
 def driver():
