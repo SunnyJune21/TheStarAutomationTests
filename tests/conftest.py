@@ -19,6 +19,18 @@ def get_existing_credentials():
     name = "Jenny"
     return [email, password, name]
 
+@pytest.fixture(scope="function")
+def sign_in_with_wrong_password():
+    email = "test12357@test.com"
+    password = "password"
+    return [email, password]
+
+@pytest.fixture(scope="function")
+def sign_in_with_wrong_email():
+    email = "test12357@testtest.com"
+    password = "eonbfdsml3980TIO!$"
+    return [email, password]
+
 @pytest.fixture(scope="module")
 def driver():
     _driver = webdriver.Chrome()
