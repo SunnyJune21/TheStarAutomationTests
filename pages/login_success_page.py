@@ -15,4 +15,3 @@ class LoginSuccessPage(BasePage):
 
     def wait_and_click_sign_out(self):
         self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, LoginSuccessPageLocators.SIGN_OUT_BTN).click()
-
