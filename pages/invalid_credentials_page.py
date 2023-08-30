@@ -7,5 +7,5 @@ class InvalidCredentialsPage(BasePage):
 
     def get_error_msg(self):
         error_msg = self.explicitly_wait_and_find_element(
-            MAX_WAIT_INTERVAL, InvalidCredentialsPageLocators.PASSWORD_ERROR_MSG)
+            MAX_WAIT_INTERVAL, InvalidCredentialsPageLocators.PASSWORD_ERROR_ELEMENT)
         return error_msg
