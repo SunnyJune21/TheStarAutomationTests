@@ -5,6 +5,7 @@ from pages.sign_in_page import SignInPage
 from resources.constants import TEST_SITE_URL
 
 
+# Test Case 2: Sign in with existing credentials
 class TestSignIn:
 
     def test_sign_in_existing_user(self, driver, get_existing_credentials):
@@ -21,6 +22,7 @@ class TestSignIn:
         username_lbl = login_success_page_ref.get_username_label()
         assert username_lbl.__contains__(get_existing_credentials[2]), "User login failed!"
 
+# Test Case 3: Sign out logged-in user
     def test_sign_out_existing_user(self, driver, get_existing_credentials):
         index_page = IndexPage(driver)
         index_page.navigate_to(TEST_SITE_URL)
@@ -38,6 +40,7 @@ class TestSignIn:
         username_lbl = login_success_page_ref.get_username_label()
         assert username_lbl.__contains__("Sign In"), "User login failed!"
 
+# Test Case 4: Sign in with wrong password
     def test_sign_in_wrong_password(self, driver, sign_in_with_wrong_password):
         index_page = IndexPage(driver)
         index_page.navigate_to(TEST_SITE_URL)
@@ -52,6 +55,7 @@ class TestSignIn:
         wrong_password_msg = invalid_credentials_page_ref.get_error_msg()
         assert wrong_password_msg is not None, "Error message element is not found"
 
+# Test Case 5: Sign in with wrong email
     def test_sign_in_wrong_email(self, driver, sign_in_with_wrong_email):
         index_page = IndexPage(driver)
         index_page.navigate_to(TEST_SITE_URL)
