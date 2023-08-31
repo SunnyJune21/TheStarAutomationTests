@@ -5,8 +5,8 @@ from pages.register_page import RegisterPage
 from pages.register_success_page import RegisterSuccessPage
 from resources.constants import TEST_SITE_URL
 
-
-class TestLogin:
+# Test Case #1: Complete user registration functionality
+class TestRegistration:
 
     def test_register_new_user(self, driver, get_new_user_credentials):
         index_page = IndexPage(driver)

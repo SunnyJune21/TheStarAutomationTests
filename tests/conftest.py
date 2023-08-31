@@ -17,7 +17,8 @@ def get_existing_credentials():
     email = "test12357@test.com"
     password = "eonbfdsml3980TIO!$"
     name = "Jenny"
-    return [email, password, name]
+    postal_code = "M5V0H8"
+    return [email, password, name, postal_code]
 
 @pytest.fixture(scope="function")
 def sign_in_with_wrong_password():
