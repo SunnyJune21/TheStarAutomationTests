@@ -27,6 +27,9 @@ class EditProfilePage(BasePage):
         phone_field.clear()
         phone_field.send_keys(credentials[4])
 
+    def wait_and_enter_country(self, credentials):
+        self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, EditProfilePageLocators.COUNTRY_FIELD).send_keys(credentials[5])
+
     def wait_and_click_save_profile(self):
         self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, EditProfilePageLocators.SAVE_PROFILE_BTN).click()
 
