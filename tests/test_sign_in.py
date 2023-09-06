@@ -38,7 +38,7 @@ class TestSignIn:
         login_success_page_ref.wait_and_click_sign_out()
 
         username_lbl = login_success_page_ref.get_username_label()
-        assert username_lbl.__contains__("Sign In"), "User login failed!"
+        assert username_lbl.__contains__("Sign In"), "User sign out failed!"
 
 # Test Case 4: Sign in with wrong password
     def test_sign_in_wrong_password(self, driver, sign_in_with_wrong_password):

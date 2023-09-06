@@ -57,7 +57,7 @@ class TestUserProfile:
         assert displayed_email_text == registered_email_text, f"Email mismatch! Expected: {registered_email_text}, " \
                                                               f"Actual: {displayed_email_text}"
 
-# Test Case *: verify that the postal code is correct
+# Test Case 8: verify that the postal code is correct
     def test_verify_postal_code_in_edit_profile(self, driver, get_existing_credentials):
         index_page = IndexPage(driver)
         index_page.navigate_to(TEST_SITE_URL)
@@ -103,6 +103,7 @@ class TestUserProfile:
 
         edit_profile_page_ref = EditProfilePage(driver)
         edit_profile_page_ref.wait_and_enter_phone(get_existing_credentials)
+        edit_profile_page_ref.wait_and_enter_country(get_existing_credentials)
         edit_profile_page_ref.wait_and_click_save_profile()
         edit_success_element = edit_profile_page_ref.get_edit_success_element()
 
